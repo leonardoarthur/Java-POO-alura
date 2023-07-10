@@ -1,21 +1,27 @@
+package br.com.alura.javapoo.modelos;
+
 public class Filme {
-    String nome;
+    public String nome;
     int anoDeLancamento;
     boolean incluidoNoPlano;
-    double somaAvaliacao;
-    int totalAvaliacoes;
+    private double somaAvaliacao;
+    private int totalAvaliacoes;
     int duracaoEmMinutos;
     //não vai devolver nada, logo, void.
-    void exibeFichaTecnica(){
+
+    public int getTotalAvaliacoes(){
+        return totalAvaliacoes;
+    }
+    public void exibeFichaTecnica(){
         System.out.println("Nome do filme: " + nome);
         System.out.println("Ano de Lançamento: " + anoDeLancamento);
     }
-    void avalia(double nota){
+    public void avalia(double nota){
         somaAvaliacao += nota;
         totalAvaliacoes++;
     }
 
-    double pegaMedia(){
+    public double pegaMedia(){
         return somaAvaliacao / totalAvaliacoes;
     }
 }
